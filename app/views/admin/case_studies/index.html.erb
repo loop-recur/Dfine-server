@@ -1,0 +1,23 @@
+<div class="content-box">
+  <div class="content-box-header">
+    <h3>CaseStudies</h3>
+    <%= tabs ["New case_study", new_admin_case_study_path] %>
+  </div>
+  <div class="content-box-content">
+		<table>
+			<tr>
+				<th>Title</th>
+				<th>&nbsp;</th>
+			</tr>
+			<% for case_study in @case_studies %>
+				<tr class="<%= cycle(:even, :odd) %>">
+					<td><%= link_to case_study.title, edit_admin_case_study_path(case_study) %></td>
+					<td class="action">
+						<%= link_to("Delete", [:admin, case_study], :confirm => 'Are you sure?', :method => :delete) %>
+					</td>
+				</tr>
+			<% end %>
+		</table>
+		<%= will_paginate @case_studies %>
+	</div>
+</div>

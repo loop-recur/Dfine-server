@@ -1,0 +1,13 @@
+<div class="content-box">
+  <div class="content-box-header">
+    <h3>Edit user</h3>
+    <%= tabs ["Cancel", admin_users_path] %>
+  </div>
+  <div class="content-box-content">
+    <%= form_for([:admin, @user]) do |f| %>
+      <%= f.error_messages %>
+      <%= render :partial => "form", :object => f %>
+      <div class="submit"><%= f.submit %></div>
+    <% end %>
+  </div>
+</div>

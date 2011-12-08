@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NCR</title>
+	<%= stylesheet_link_tag "admin/reset", "admin/style", "admin/invalid", "admin/960.css", "admin/custom.css", "south-street/jquery-ui.css", "facebox", "autosuggest" %>
+	
+  <%= javascript_include_tag "application" %>
+
+	<script src="http://www.google.com/jsapi" charset="utf-8"></script>
+  <script charset="utf-8">
+     google.load("jqueryui", "1.8.7");
+  </script>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="body-wrapper">
+	<div id="sidebar"><div id="sidebar-wrapper">
+    <h1 id="sidebar-title"><a href="#">NCR</a></h1>
+    <div id="logo"><%= link_to("NCR") %></div>
+    
+    <div id="profile-links">
+      Hello, <%= link_to current_user.email, edit_admin_user_path(current_user) %> |
+      <%= link_to "Log Out", destroy_user_session_path %>
+    </div>
+    
+    <ul id="main-nav">
+      <li>
+        <%= link_to("CaseStudies", admin_case_studies_path, :class => "nav-top-item no-submenu") %>
+      </li>
+      <li>
+        <%= link_to("Users", admin_users_path, :class => "nav-top-item no-submenu") %>
+      </li>
+		</ul>
+	</div></div>
+
+
+	<div id="main-content">
+		<%= display_flash_messages %>
+	  <%= yield %>
+		<div id="footer">
+		</div>
+	</div>
+</div>
+</body>
+</html>
