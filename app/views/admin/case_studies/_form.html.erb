@@ -1,9 +1,27 @@
 <div class="section">
-	<table class="form">
-	  <tr>
-	    <th><%= form.label :title %></th>
-	    <td><%= form.text_field :title %></td>
-	  </tr>
-	</table>
-</div>
+	<%= form.fields_for :image do |image_form| %>
+		<table class="form">
+		  <tr>
+		    <th><%= form.label :title %></th>
+		    <td><%= form.text_field :title %></td>
+		  </tr>
+		  <tr>
+		    <th><%= form.label :points, raw("Bullet points (#{content_tag(:small, "separate by new line")})") %></th>
+		    <td><%= form.text_area :points %></td>
+		  </tr>
+		</table>
+		<ul>
+			<% for image in form.object.images %>
+				<li>
+					<%= link_to(image_tag(image.upload.url(:thumb)), image.upload.url) %>
+					<%= image.caption %>
+					<%= link_to("[X]", admin_image_path(image), :method => :delete) %>
+				</li>
+			<% end %>
+		</ul>
+	
+		<h2>Add an image</h2>
+		<%= render :partial => "admin/images/form", :locals => {:form => image_form} %>
 
+	<% end %>
+</div>

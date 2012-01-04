@@ -48,4 +48,4 @@ module Dfine
   end
 end
 
-DOMAIN = YAML.load_file("#{Rails.root}/config/domains.yml")[Rails.env] rescue "http://simple-night-6724.heroku.com" # hack for now.
+DOMAIN = "http://dfine.heroku.com"

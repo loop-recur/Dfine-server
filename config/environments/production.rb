@@ -63,7 +63,7 @@ end
 PAPERCLIP_DEFAULTS = {
   :storage => :s3, 
   :s3_credentials => { 
-    :bucket            => ENV['S3_BUCKET'] || "dev.simplesupport.com", 
+    :bucket            => ENV['S3_BUCKET'] || "dfine.looprecur.com", 
     :access_key_id     => ENV['S3_KEY']    || "key", 
     :secret_access_key => ENV['S3_SECRET'] || "secret" },
   :default_url => ":class/:style.png",

@@ -10,10 +10,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111207195914) do
+ActiveRecord::Schema.define(:version => 20120104183732) do
 
   create_table "case_studies", :force => true do |t|
     t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "points"
+  end
+
+  create_table "images", :force => true do |t|
+    t.text     "caption"
+    t.string   "upload_file_name"
+    t.string   "upload_content_type"
+    t.integer  "upload_file_size"
+    t.datetime "upload_updated_at"
+    t.integer  "case_study_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -4,6 +4,7 @@ Dfine::Application.routes.draw do
   namespace :admin do
     root :to => "case_studies#index"
     resources :case_studies
+    resources :images
     resources :users
   end
   
