@@ -7,11 +7,11 @@ class CaseStudy < ActiveRecord::Base
     images.build(val) if val && !val[:upload].blank?
   end
   
-  def points
+  def bullet_points
     self[:points].to_s.split("\n").map(&:squish).reject(&:blank?)
   end
   
   def to_hash
-    attributes.merge(:images => images, :bullet_points => points)
+    attributes.merge(:images => images, :bullet_points => bullet_points)
   end
 end
