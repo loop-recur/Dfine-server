@@ -12,6 +12,6 @@ class CaseStudy < ActiveRecord::Base
   end
   
   def to_hash
-    attributes.merge(:images => images, :bullet_points => bullet_points)
+    attributes.merge(:images => images.map(&:to_hash), :bullet_points => bullet_points)
   end
 end
