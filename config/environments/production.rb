@@ -67,6 +67,6 @@ PAPERCLIP_DEFAULTS = {
     :access_key_id     => ENV['S3_KEY']    || "AKIAI7XY7LCSHAMPPN5A", 
     :secret_access_key => ENV['S3_SECRET'] || "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" },
   :default_url => ":class/:style.png",
-  :default_style => :default,
+  :default_style => :original,
   :path => ":class/:id_partition/:style/:basename.:extension",
 }
