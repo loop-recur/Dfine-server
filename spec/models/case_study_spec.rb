@@ -27,7 +27,6 @@ describe CaseStudy do
       @case_study.to_hash.should include(:bullet_points => ["one", "two"])
       @case_study.to_hash.should have_key(:images)
     end
-    
   end
   
 end

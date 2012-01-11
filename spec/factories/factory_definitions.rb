@@ -2,6 +2,10 @@ Factory.define :case_study do |f|
   f.title "MyString"
 end
 
+Factory.define :image do |f|
+  f.caption "MyString"
+end
+
 Factory.define :user do |f|
   f.email { Factory.next(:email) }
   f.password  "MyString"
