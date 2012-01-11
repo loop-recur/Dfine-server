@@ -17,7 +17,7 @@ describe CaseStudy do
     
     it "adds points" do
       @case_study.points = "one\n two\n three  \n \n"
-      @case_study.bullet_points.should == ["one", "two", "three"]
+      @case_study.bullet_points.should == ["one", "two", "three"] 
     end
     
     it "turns into a hash" do
