@@ -9,6 +9,10 @@
 		    <th><%= form.label :points, raw("Bullet points (#{content_tag(:small, "separate by new line")})") %></th>
 		    <td><%= form.text_area :points %></td>
 		  </tr>
+		  <tr>
+		    <th><%= form.label :kind %></th>
+		    <td><%= form.select :kind, case_study_selectable_kinds, :include_blank => "Select a Kind of Case Study" %></td>
+		  </tr>
 		</table>
 		<ul>
 			<% for image in form.object.images %>

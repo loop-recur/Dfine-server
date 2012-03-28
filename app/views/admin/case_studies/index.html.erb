@@ -7,11 +7,13 @@
 		<table>
 			<tr>
 				<th>Title</th>
+				<th>Kind</th>
 				<th>&nbsp;</th>
 			</tr>
 			<% for case_study in @case_studies %>
 				<tr class="<%= cycle(:even, :odd) %>">
 					<td><%= link_to case_study.title, edit_admin_case_study_path(case_study) %></td>
+					<td><%= case_study.kind.titleize %></td>
 					<td class="action">
 						<%= link_to("Delete", [:admin, case_study], :confirm => 'Are you sure?', :method => :delete) %>
 					</td>
